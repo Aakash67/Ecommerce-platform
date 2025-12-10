@@ -18,7 +18,7 @@ interface Cart {
 interface CartContextType {
     cart: Cart | null;
     addToCart: (productId: string, price: number) => Promise<void>;
-    // updateEmail removed - guest checkout disabled
+    updateEmail: (email: string) => Promise<void>;
     checkout: () => Promise<void>;
     loading: boolean;
     isConnected: boolean;
@@ -117,8 +117,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
     };
 
-    // Guest checkout disabled - updateEmail function removed
-    /*
     const updateEmail = async (email: string) => {
         if (!cart) return;
 
@@ -162,8 +160,6 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             }
         }
     };
-    */
-
 
     const checkout = async () => {
         if (!cart) return;
@@ -212,7 +208,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, checkout, loading, isConnected }}>
+        <CartContext.Provider value={{ cart, addToCart, updateEmail, checkout, loading, isConnected }}>
             {children}
         </CartContext.Provider>
     );
