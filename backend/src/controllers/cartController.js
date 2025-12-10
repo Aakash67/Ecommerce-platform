@@ -39,6 +39,8 @@ export const createOrGetCart = async (req, res) => {
     }
 };
 
+// Email update functionality removed (guest checkout disabled)
+/*
 export const updateEmail = async (req, res) => {
     const { cartId, email } = req.body;
 
@@ -59,6 +61,7 @@ export const updateEmail = async (req, res) => {
         res.status(500).json({ error: error.message, details: 'Failed to update email' });
     }
 };
+*/
 
 export const addItem = async (req, res) => {
     const { cartId, productId, quantity, price } = req.body;
