@@ -1,0 +1,14 @@
+{
+    "name": "antigravity",
+    "version": "1.0.0",
+    "description": "Antigravity Project",
+    "scripts": {
+        "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^9.1.0"
+    }
+}
